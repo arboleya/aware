@@ -6,7 +6,7 @@ Bind system for [Theoricus](https://github.com/theoricus/theoricus) framework.
 
 [![Build Status](https://travis-ci.org/theoricus/the-bind.png?branch=master)](https://travis-ci.org/theoricus/the-bind) [![Coverage Status](https://coveralls.io/repos/theoricus/the-bind/badge.png)](https://coveralls.io/r/theoricus/the-bind)
 
-[![Dependency Status](https://gemnasium.com/theoricus/the-bind.png)](https://gemnasium.com/theoricus/the-bind)  [![NPM version](https://badge.fury.io/js/polvo.png)](http://badge.fury.io/js/polvo)
+[![Dependency Status](https://gemnasium.com/theoricus/the-bind.png)](https://gemnasium.com/theoricus/the-bind)  [![NPM version](https://badge.fury.io/js/the-bind.png)](http://badge.fury.io/js/the-bind)
 
 ## Usage Drafts
 
