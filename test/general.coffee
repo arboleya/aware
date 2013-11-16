@@ -48,3 +48,24 @@ describe '[general]', ->
 
     tmp = new Sample
     should.not.exist tmp.store.get 'name'
+
+  it 'should unbind property properly', ->
+
+    called = 0
+    tmp = new Sample
+    names = ['bender', 'lecter']
+
+    tmp.store.on 'name', on_name_change = ( name )->
+      called++
+      name.should.equal names.shift()
+
+    tmp.store.set 'name', 'bender'
+    tmp.store.set 'name', 'lecter'
+    tmp.store.get('name').should.equal 'lecter'
+
+    tmp.store.off 'name', on_name_change
+    tmp.store.set 'name', 'peter'
+    tmp.store.set 'name', 'rob'
+    tmp.store.set 'name', 'charles'
+
+    called.should.equal 2
