@@ -69,3 +69,37 @@ describe '[general]', ->
     tmp.store.set 'name', 'charles'
 
     called.should.equal 2
+
+  it 'should set dictionary properly', ->
+
+    called = 0
+    tmp = new Sample
+    dict = 
+      name: 'bender'
+      type: 'robot'
+
+    tmp.store.on 'name', ( name )->
+      called++
+      name.should.equal dict.name
+
+    tmp.store.on 'type', ( name )->
+      called++
+      name.should.equal dict.type
+
+    tmp.store.set dict
+
+    called.should.equal 2
+
+  it 'should alert about incompatible properly', ->
+
+    tmp = new Sample
+    pass = false
+
+    try
+      tmp.store.set 'oi'
+    catch err
+      pass = true
+      should.exist err
+      err.message.should.equal 'Cannot set property, it must be a dictionary'
+
+    pass.should.equal true

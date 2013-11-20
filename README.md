@@ -47,8 +47,19 @@ data_store.off 'name', on_name_change
 data_store.set 'name', 'peter' # will fire nothing
 ```
 
+### Example 3
 
+You can set also a dictionary of key->values.
 
+````coffeescript
+# both set calls are equivalent
+
+# multiple sets
+data_store.set 'name', peter
+data_store.set 'age', 30
+
+# combined set
+data_store.set name: peter, age: 30
 
 # License
 

@@ -22,7 +22,13 @@ module.exports = class Bind
   set:(key, value)->
     store = @__store or @__store = {}
 
-    if store[key] isnt value
-      @ev.emit key, store[key] = value
+    if arguments.length is 2
+      if store[key] isnt value
+        @ev.emit key, store[key] = value
+      return value
 
-    return value
+    else if key instanceof Object
+      @set k, v for k, v of key
+      return key
+    else
+      throw new Error 'Cannot set property, it must be a dictionary'
