@@ -17,6 +17,8 @@ Simple draft demonstrating how this should work.
 ### Example 1
 
 ````coffeescript
+Bind = require 'aware'
+
 data_store = new Bind
 
 data_store.on 'name', (name)->
@@ -50,6 +52,7 @@ data_store.set 'name', 'peter' # will fire nothing
 ```
 
 ### Example 3
+Bind = require 'aware'
 
 You can set also a dictionary of key->values.
 
@@ -67,8 +70,10 @@ data_store.set name: peter, age: 30
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Anderson Arboleya
 
+````
+Copyright (c) 2013 Anderson Arboleya
+  
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to
@@ -85,3 +90,4 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+````
