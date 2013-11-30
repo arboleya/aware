@@ -42,7 +42,7 @@ test.coverage.preview: test.coverage
 
 test.coverage.coveralls: test.coverage
 	@sed -i.bak \
-		"s/^.*the-bind\/lib/SF:lib/g" \
+		"s/^.*aware\/lib/SF:lib/g" \
 		coverage/lcov.info
 
 	@cat coverage/lcov.info | $(COVERALLS)

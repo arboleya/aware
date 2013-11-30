@@ -1,12 +1,12 @@
-# The Bind
+# Aware
 
-Bind system for [Theoricus](https://github.com/theoricus/theoricus) framework.
+Bindable key-value storage.
 
-[![Stories in Ready](https://badge.waffle.io/theoricus/the-bind.png)](http://waffle.io/theoricus/the-bind)  
+[![Stories in Ready](https://badge.waffle.io/serpentem/aware.png)](http://waffle.io/serpentem/aware)
 
-[![Build Status](https://travis-ci.org/theoricus/the-bind.png?branch=master)](https://travis-ci.org/theoricus/the-bind) [![Coverage Status](https://coveralls.io/repos/theoricus/the-bind/badge.png)](https://coveralls.io/r/theoricus/the-bind)
+[![Build Status](https://travis-ci.org/serpentem/aware.png?branch=master)](https://travis-ci.org/serpentem/aware) [![Coverage Status](https://coveralls.io/repos/serpentem/aware/badge.png)](https://coveralls.io/r/serpentem/aware)
 
-[![Dependency Status](https://gemnasium.com/theoricus/the-bind.png)](https://gemnasium.com/theoricus/the-bind)  [![NPM version](https://badge.fury.io/js/the-bind.png)](http://badge.fury.io/js/the-bind)
+[![Dependency Status](https://gemnasium.com/serpentem/aware.png)](https://gemnasium.com/serpentem/aware)  [![NPM version](https://badge.fury.io/js/aware.png)](http://badge.fury.io/js/aware)
 
 ## Usage Drafts
 
@@ -29,6 +29,8 @@ data_store.get 'name' # bender
 ### Example 2
 
 ````coffeescript
+Bind = require 'aware'
+
 data_store = new Bind
 data_store.set 'name', 'bender'
 

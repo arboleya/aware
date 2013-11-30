@@ -1,5 +1,6 @@
-Bind = require '../lib/bind'
 should = require('chai').should()
+
+Aware = require '../lib/aware'
 
 describe '[general]', ->
   
@@ -7,7 +8,7 @@ describe '[general]', ->
 
   before ->
     class Sample
-      constructor:-> @store = new Bind
+      constructor:-> @store = new Aware
 
 
   it 'should notify when value is new or different than previous', ->

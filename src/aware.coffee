@@ -1,6 +1,6 @@
-Event = require 'the-event'
+Event = require 'happens'
 
-module.exports = class Bind
+module.exports = class Aware
   ev: null
 
   constructor:->
