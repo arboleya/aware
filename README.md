@@ -2,70 +2,55 @@
 
 Bindable key-value storage.
 
-[![Stories in Ready](https://badge.waffle.io/serpentem/aware.png)](http://waffle.io/serpentem/aware)
+[![Build Status](https://travis-ci.org/serpentem/aware.png?branch=master)](https://travis-ci.org/serpentem/aware)
+[![Coverage Status](https://coveralls.io/repos/serpentem/aware/badge.png)](https://coveralls.io/r/serpentem/aware)
+[![Dependency Status](https://gemnasium.com/serpentem/aware.png)](https://gemnasium.com/serpentem/aware)
+[![NPM version](https://badge.fury.io/js/aware.png)](http://badge.fury.io/js/aware)
 
-[![Build Status](https://travis-ci.org/serpentem/aware.png?branch=master)](https://travis-ci.org/serpentem/aware) [![Coverage Status](https://coveralls.io/repos/serpentem/aware/badge.png)](https://coveralls.io/r/serpentem/aware)
+## Installation
 
-[![Dependency Status](https://gemnasium.com/serpentem/aware.png)](https://gemnasium.com/serpentem/aware)  [![NPM version](https://badge.fury.io/js/aware.png)](http://badge.fury.io/js/aware)
-
-## Usage Drafts
-
-Simple draft demonstrating how this should work.
-
-> Attention, is a **WIP**! Do not use it yet.
-
-### Example 1
-
-````coffeescript
-Bind = require 'aware'
-
-data_store = new Bind
-
-data_store.on 'name', (name)->
-  console.log name
-
-data_store.set 'name', 'bender' # will fire callback above
-data_store.get 'name' # bender
-```
-
-### Example 2
-
-````coffeescript
-Bind = require 'aware'
-
-data_store = new Bind
-data_store.set 'name', 'bender'
-
-# since the property name already exists, this callback will be fired right
-# away, and after that every time the value for 'name' changes
-data_store.on 'name', on_name_change = (name)->
-  console.log name
-
-data_store.set 'name', 'bender' # will fire nothing
-data_store.set 'name', 'john' # will fire callback again
-data_store.set 'name', 'lecter' # will fire callback again
-
-# unlistening
-data_store.off 'name', on_name_change
-
-data_store.set 'name', 'peter' # will fire nothing
-```
-
-### Example 3
-Bind = require 'aware'
-
-You can set also a dictionary of key->values.
-
-````coffeescript
-# both set calls are equivalent
-
-# multiple sets
-data_store.set 'name', peter
-data_store.set 'age', 30
-
-# combined set
-data_store.set name: peter, age: 30
 ````
+npm install aware --save-dev
+````
+
+## API
+
+ - `.on(key, handler)` - listening for key changes
+ - `.off(key, handler)` - unlistening key changes
+ - `.get(key, 'value')` - getting key value
+ - `.set(key, 'value')` - setting key value
+  - `.set({key: 'value'})` - bulk set keys on dictionary
+
+### Usage
+
+````javascript
+var aware = require('aware');
+
+var store = aware();
+
+store.on('name', function(name){
+  console.log(name);
+}
+
+store.set('name', 'bender'); // will fire handler above
+store.get('name'); // bender
+
+// since the property exists now, this handler will be fired right
+// away, and after that every time the value for 'name' changes
+var name_handler = function(name) {
+  console.log(name);
+};
+store.on('name', name_handler);
+
+store.set('name', 'bender'); // will fire nothing
+store.set('name', 'john'); // will fire callback again
+store.set('name', 'lecter'); // will fire callback again
+
+// unlistening
+store.off('name', name_handler);
+
+store.set('name', 'peter'); // will fire nothing
+```
 
 # License
 
