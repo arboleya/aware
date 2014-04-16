@@ -1,5 +1,5 @@
-var should = require('chai').should(),
-    aware = require('../lib/aware');
+var should = require('chai').should();
+var aware = require('../lib/aware');
 
 describe('[general]', function(){
 
