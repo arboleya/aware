@@ -14,7 +14,7 @@ describe('[interpolation]', function(){
 
     store.set('first-name', 'Foo');
     store.set('last-name', 'Bar');
-    store.set('name', '{{first-name}} {{last-name}}');
+    store.set('name', '#{first-name} #{last-name}');
   });
 
   it('should internally bind/unbind/trigger interpolated keys', function(done){
@@ -40,9 +40,9 @@ describe('[interpolation]', function(){
 
     store.set('first-name', 'Foo');
     store.set('last-name', 'Bar');
-    store.set('name', '{{first-name}} {{last-name}}');
+    store.set('name', '#{first-name} #{last-name}');
     store.set('first-name', 'Fool');
-    store.set('name', 'Chocolate {{last-name}}');
+    store.set('name', 'Chocolate #{last-name}');
     store.set('first-name', 'Foolish');
     store.set('last-name', 'Barish');
   });
