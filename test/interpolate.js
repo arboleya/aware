@@ -69,7 +69,7 @@ describe('[interpolation]', function(){
       store.get('greetings').should.equal(expected);
 
       if(!expecteds.length){
-        store.off('greetings', handler)
+        store.off('greetings', handler);
         done();
       }
     });
