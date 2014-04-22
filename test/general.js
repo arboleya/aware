@@ -3,9 +3,10 @@ var should = require('chai').should(),
 
 describe('[general]', function(){
 
-  var store;
+  var store = null;
+
   beforeEach(function(){
-    store = aware();
+    store = aware({});
   });
 
   it('should notify when value is new or different than previous', function(){
