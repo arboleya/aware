@@ -3,9 +3,10 @@ var aware = require('../lib/aware');
 
 describe('[general]', function(){
 
-  var store;
+  var store = null;
+
   beforeEach(function(){
-    store = aware();
+    store = aware({});
   });
 
   it('should notify when value is new or different than previous', function(){
@@ -85,7 +86,21 @@ describe('[general]', function(){
     called.should.equal(2);
   });
 
-  it('should alert about incompatible properly', function(){
+  it('should not emit event twice when prop stays the same', function(){
+    var called = 0;
+
+    store.on('unchanged', function(){
+      console.log('EVENT');
+      called++;
+    });
+
+    store.set('unchanged', 1);
+    store.set('unchanged', 1);
+
+    called.should.equal(1);
+  });
+
+  it('should alert about incompatible property', function(){
     var pass = false;
 
     try {
@@ -98,5 +113,13 @@ describe('[general]', function(){
     }
 
     pass.should.equal(true);
+  });
+
+  it('should alert about Function type invalidation', function(){
+
+    (function(){
+      store.on('key');
+    }).should.throw(/is not a Function/);
+
   });
 });
