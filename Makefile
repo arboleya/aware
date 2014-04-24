@@ -23,15 +23,13 @@ test.coverage.preview: test.coverage
 	@cd coverage/lcov-report && python -m SimpleHTTPServer 8080
 
 test.coverage.coveralls: test.coverage
-	@sed -i.bak \
-		"s/^.*aware\/lib/SF:lib/g" \
-		coverage/lcov.info
-
 	@cat coverage/lcov.info | $(COVERALLS)
+
 
 
 readme:
 	$(GHFM) README.md
+
 
 
 bump.minor:
