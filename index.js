@@ -89,8 +89,16 @@ var Aware = {
 
 
 
+
+/*******************************************************************************
+ * Goodies -- methods used internally
+ ******************************************************************************/
+
 /**
- * Goodies
+ * Interpolates values internally re-binding key dependencies
+ * @param  {Aware} aw    Aware reference
+ * @param  {Object} value Key value being set
+ * @return {Object}       Setted value
  */
 function interpolate(aw, value){
   if(value === undefined) return null;
@@ -102,6 +110,12 @@ function interpolate(aw, value){
   return value;
 }
 
+/**
+ * Automatically bind/unbinds keys internally
+ * @param  {Aware} aw    Aware reference
+ * @param  {String} key   Key being set
+ * @param  {[Object} value Key value to set
+ */
 function toogle(aw, key, value){
   var parent, t,tokens = tokenize(value);
 
@@ -113,6 +127,12 @@ function toogle(aw, key, value){
       unbind(aw, key, parent);
 }
 
+/**
+ * Binds key internally
+ * @param  {Aware} aw     Aware reference
+ * @param  {String} key    Key to bind
+ * @param  {String} parent Parent key to be binded
+ */
 function bind(aw, key, parent){
   if(!aw.__handlers[key] || !aw.__handlers[key][parent]){
     if(!aw.__handlers[key]) aw.__handlers[key] = {};
@@ -122,23 +142,43 @@ function bind(aw, key, parent){
   }
 }
 
+/**
+ * Unbinds key internally
+ * @param  {Aware} aw     Aware reference
+ * @param  {String} key    Key to unbind
+ * @param  {String} parent Parent key to be unbinded
+ */
 function unbind(aw, key, parent){
   aw.off(parent, aw.__handlers[key][parent]);
   aw.__handlers[key][parent] = null;
   delete aw.__handlers[key][parent];
 }
 
+/**
+ * Emits event
+ * @param  {Aware} aw  Aware reference
+ * @param  {String} key Key to be emitted
+ */
 function emit(aw, key){
   aw.__happens.emit(key, aw.get(key));
 }
 
-
+/**
+ * Extracts possible tokens (interpolated key names) from given value
+ * @param  {String} str String to extract tokens from
+ * @return {Array}     Found tokens
+ */
 function tokenize(str){
   if(typeof(str) === 'string')
     return str.match(/#\{[^\}]+\}/g) || [];
   return [];
 }
 
+/**
+ * Clean given token, returning its name without the brackets
+ * @param  {String} str Token to be clean
+ * @return {String}     Clean token name
+ */
 function clean(str) {
   return str.replace(/#\{([^\}]+)\}/g, '$1');
 }
