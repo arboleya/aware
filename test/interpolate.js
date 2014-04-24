@@ -1,5 +1,5 @@
 var should = require('chai').should();
-var aware = require('../lib/aware');
+var aware = require('..');
 
 describe('[interpolation]', function(){
 

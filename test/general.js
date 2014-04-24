@@ -1,5 +1,5 @@
 var should = require('chai').should();
-var aware = require('../lib/aware');
+var aware = require('..');
 
 describe('[general]', function(){
 
@@ -90,7 +90,6 @@ describe('[general]', function(){
     var called = 0;
 
     store.on('unchanged', function(){
-      console.log('EVENT');
       called++;
     });
 
