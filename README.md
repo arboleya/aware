@@ -10,7 +10,7 @@ Bindable key-value storage.
 ## Installation
 
 ````
-npm install aware --save-dev
+npm install aware --save
 ````
 
 ## API
@@ -21,7 +21,9 @@ npm install aware --save-dev
  - `.set(key, 'value')` - setting key value
   - `.set({key: 'value'})` - bulk set keys on dictionary
 
-### Usage
+## Usage
+
+### Basics
 
 ````javascript
 var aware = require('aware');
@@ -52,6 +54,59 @@ store.off('name', name_handler);
 store.set('name', 'peter'); // will fire nothing
 ```
 
+### With objects
+
+````javascript
+var store = aware({
+  set_name: function(name){
+    this.set('name', name);
+  }
+});
+
+store.on('name', function(name){
+  console.log('name changed', name);
+});
+
+store.set_name('name', 'bender');
+````
+
+### With classes
+
+````javascript
+function Store(){
+  aware(this);
+}
+
+Store.prototype.set_name = function(name){
+  this.set('name', name);
+}
+
+var store = new Store();
+store.on('name', function(name){
+  console.log('name changed', name);
+});
+
+store.set_name('name', 'bender');
+````
+
+## Interpolation
+
+Lets you compose variables bundling it based on values from one or more
+different keys on store.
+
+````javascript
+var store = aware();
+
+store.on('name', function(name){
+  console.log('name changed', name);
+});
+
+store.set('name', '#{first-name} #{second-name}');
+store.set('first-name', 'hannibal');
+store.set('last-name', 'lecter');
+
+````
+
 # License
 
 The MIT License (MIT)
@@ -74,7 +129,3 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/serpentem/aware/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
