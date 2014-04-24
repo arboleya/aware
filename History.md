@@ -1,3 +1,10 @@
+0.3.0 / 2014-04-24
+===================
+ * Improving signature again
+ * Improving README
+ * Adding interpolation features
+ * Documenting source code
+
 0.2.0 / 2013-12-09
 ===================
  * Improving signature
