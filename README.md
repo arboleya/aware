@@ -91,8 +91,8 @@ store.set_name('name', 'bender');
 
 ## Interpolation
 
-Lets you compose variables bundling it based on values from one or more
-different keys on store.
+Lets you compose keys bundling it based on values from one or more different
+keys.
 
 ````javascript
 var store = aware();
