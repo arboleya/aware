@@ -1,6 +1,7 @@
 MVERSION=node_modules/mversion/bin/version
 VERSION=`$(MVERSION) | sed -E 's/\* package.json: //g'`
 
+GHFM=node_modules/ghfm/bin/ghfm
 ISTANBUL=node_modules/istanbul/lib/cli.js
 MOCHA=node_modules/mocha/bin/mocha
 _MOCHA=node_modules/mocha/bin/_mocha
@@ -29,6 +30,9 @@ test.coverage.coveralls: test.coverage
 	@cat coverage/lcov.info | $(COVERALLS)
 
 
+readme:
+	$(GHFM) README.md
+
 
 bump.minor:
 	@$(MVERSION) minor
@@ -46,13 +50,5 @@ publish:
 	git push origin $(VERSION)
 	git push origin master
 	npm publish
-
-re-publish:
-	git tag -d $(VERSION)
-	git tag $(VERSION)
-	git push origin :$(VERSION)
-	git push origin $(VERSION)
-	git push origin master -f
-	npm publish -f
 
 .PHONY: test
