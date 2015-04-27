@@ -21,14 +21,14 @@
     "node": ">= 0.10"
   },
   "dependencies": {
-    "happens": "0.5.x"
+    "happens": "^0.6.0"
   },
   "devDependencies": {
-    "chai": "1.8.x",
-    "mocha": "1.14.x",
-    "mversion": "0.2.x",
-    "istanbul": "0.1.x",
-    "coveralls": "2.3.x",
-    "ghfm": "0.2.x"
+    "chai": "^2.3.0",
+    "coveralls": "^2.11.2",
+    "ghfm": "0.2.x",
+    "istanbul": "^0.3.13",
+    "mocha": "^2.2.4",
+    "mversion": "^1.10.0"
   }
 }
