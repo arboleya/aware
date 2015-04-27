@@ -5,7 +5,7 @@ Bindable key-value storage.
 [![Build Status](https://travis-ci.org/arboleya/aware.svg?branch=master)](https://travis-ci.org/arboleya/aware)
 [![Coverage Status](https://coveralls.io/repos/arboleya/aware/badge.svg?branch=master)](https://coveralls.io/r/arboleya/aware?branch=master)
 [![Code Climate](https://codeclimate.com/repos/553e52d4e30ba0693a003116/badges/cd3497793a2a9e136f73/gpa.svg)](https://codeclimate.com/repos/553e52d4e30ba0693a003116/feed)
-[![Dependency Status](https://gemnasium.com/serpentem/aware.svg)](https://gemnasium.com/serpentem/aware)
+[![Dependency Status](https://gemnasium.com/arboleya/aware.svg)](https://gemnasium.com/arboleya/aware)
 
 ## Installation
 
