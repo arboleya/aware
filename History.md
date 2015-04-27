@@ -20,7 +20,7 @@
 
 0.1.2 / 2013-11-19
 ===================
- * Improving method `set` to accept a dictionary of key-value paris
+ * Improving method `set` to accept a dictionary of key-value pairs
 
 0.1.1 / 2013-11-19
 ===================
