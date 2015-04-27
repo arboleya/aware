@@ -1,5 +1,19 @@
----
-language: node_js
-node_js: 0.1
+env:
+  global:
+    # COVERALLS_REPO_TOKEN
+    - secure: "WXBFTcEMDgm22YQZAMczqOkeXxb/v7EGQe7ZJCE+VH2MwQmNVbz+GKciSMUOuv/48tUq7JYH1pw785uwsp27zfR9C1h+siX5BSirfEuSc9WrG4FzEz/FYgIGsH2XAyx0+KhGF2M0B4k1U/EfR0dMk4/TWDPMeSB+Poba5orFw9I="
 
-script: make test.coverage.coveralls
+    # CODECLIMATE_REPO_TOKEN
+    - secure: "cosSYv57hSwhKZe3qlYAxSqosHjD+t0G+EVLQaT0w0TgTySf/TxPiMGi4rl3t1XQr2QXseb/CmY5GWhmBFxwByM//TxKe+ghoTZgOVPORwZuNtncXG8c8Qyq5FNY6bMGu9tsLDexFLt4utryJCjNjl83KY+LBOQzR6SFclC/ho4="
+
+language: node_js
+
+node_js:
+  - iojs
+  - 0.1
+
+install:
+  - npm install
+
+script:
+  - make test.coverage.coveralls
