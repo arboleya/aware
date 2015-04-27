@@ -1,3 +1,7 @@
+0.3.1 / 2014-04-27
+===================
+ * Upgrading all dependencies
+
 0.3.0 / 2014-04-24
 ===================
  * Improving signature again
