@@ -1,6 +1,6 @@
 {
   "name": "aware",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Anderson Arboleya <anderson@arboleya.me>",
   "description": "Bindable key-value storage",
   "keywords": [
