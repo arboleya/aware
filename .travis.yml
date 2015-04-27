@@ -1,10 +1,10 @@
 env:
   global:
     # COVERALLS_REPO_TOKEN
-    - secure: "WXBFTcEMDgm22YQZAMczqOkeXxb/v7EGQe7ZJCE+VH2MwQmNVbz+GKciSMUOuv/48tUq7JYH1pw785uwsp27zfR9C1h+siX5BSirfEuSc9WrG4FzEz/FYgIGsH2XAyx0+KhGF2M0B4k1U/EfR0dMk4/TWDPMeSB+Poba5orFw9I="
+    - secure: "qNr/n1M4XTvv8P+ae6Xb+obtN+aLmCUecD6HBbpr2bb59WfVUWxUFZqzVqASn2xU8MDGTnvjX8OQQdHJz7PwY/cM446Y3WlusVgWIQFYBzp0Tz9/jVpuHXkClUIixGBAUGM3/Ebs1C/whVcLmDita3kpuxa+MqnyEnug4qngidc="
 
     # CODECLIMATE_REPO_TOKEN
-    - secure: "cosSYv57hSwhKZe3qlYAxSqosHjD+t0G+EVLQaT0w0TgTySf/TxPiMGi4rl3t1XQr2QXseb/CmY5GWhmBFxwByM//TxKe+ghoTZgOVPORwZuNtncXG8c8Qyq5FNY6bMGu9tsLDexFLt4utryJCjNjl83KY+LBOQzR6SFclC/ho4="
+    - secure: "S+vePO7gncl7oONm7dY6DXUrB7T14J/xJXTBAcMKS4MBUENpRYixCMI5EwY2D+tybaSTLpwA2RfOUXeAvhf33PJeA04n5qdGxiB6RXak15QYkZztwDuJrXQ4yUeSnl3Ij9n2uixUhIvG4g3Xgjq1gVrw32ieadKJbmt+AYGEBPg="
 
 language: node_js
 
